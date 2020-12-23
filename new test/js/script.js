@@ -1,29 +1,20 @@
-var products = [    {name: " Grapefruit", calories: 170, color: "red", sold: 8200 },
-                    {name: " Orange", calories: 160, color: "orange", sold: 12101 },
-                    {name: " Cola", calories: 210, color: "caramel", sold: 25412 },
-                    {name: " Diet Cola", calories: 0, color: "caramel", sold: 43922 },
-                    {name: " Lemon", calories: 200, color: "clear", sold: 14983 },
-                    {name: " Raspberry", calories: 180, color: "pink", sold: 9427 },
-                    {name: " Root Beer", calories: 200, color: "caramel", sold: 9909 },
-                    {name: " Water", calories: 0, color: "clear", sold: 62123 }
-            ];
-
-function compareCalories(colaA, colaB) {
-  return colaA.calories - colaB.calories;
+function Dog(name, breed, weight) {
+  this.name = name;
+  this.breed = breed;
+  this.weight = weight;
 }
 
-function printProduct(products) {
-    for (var i = 0; i < products.length; i++){
-        console.log("Name: " + products[i].name + 
-                    ", Calories: " + products[i].calories +
-                    ", Color: " + products[i].color +
-                    ", sold " + products[i].sold);
-    }
+var fido = new Dog("Fido", "Mixed", 38);
+var fluffy = new Dog("fluffy", "Poodle", 30);
+var spot = new Dog("spot", "Chihuahua", 10);
+var dogs = [fido, fluffy, spot];
+
+for (var i = 0; i < dogs.length; i++) {
+  var size = "small";
+  if (dogs[i].weight > 10) {
+    size = "large";
+  }
+  console.log("Dog: " + dogs[i].name
+                      + " is a" + size
+                      + " " + dogs[i].breed);
 }
-
-
-products.sort(compareCalories);
-console.log("Product sorted by calories");
-printProduct(products);
-
-
